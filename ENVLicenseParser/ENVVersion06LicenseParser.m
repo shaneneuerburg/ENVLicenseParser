@@ -37,10 +37,20 @@
                                            withFormat:@"MMddyyyy"];
   BOOL expired = [expirationDate env_isInPast];
 
-  return [[ENVPerson alloc] initWithName:fullName
-                               licenseID:licenseID
-                                 address:address
-                                 expired:expired];
+  ENVPerson *person = [[ENVPerson alloc] initWithName:fullName
+                                            licenseID:licenseID
+                                              address:address
+                                              expired:expired];
+  
+  [person setFirstName:firstName];
+  [person setMiddleName:middleName];
+  [person setLastName:lastName];
+  [person setStreet:street];
+  [person setCity:city];
+  [person setState:state];
+  [person setZip:zip];
+  
+  return person;
 }
 
 @end

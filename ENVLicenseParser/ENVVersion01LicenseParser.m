@@ -25,11 +25,17 @@
                                                        city:city
                                                       state:state
                                                         zip:zip];
-
-  return [[ENVPerson alloc] initWithName:name
-                               licenseID:licenseID
-                                 address:address
-                                 expired:expired];
+  
+  ENVPerson *person = [[ENVPerson alloc] initWithName:name
+                                            licenseID:licenseID
+                                              address:address
+                                              expired:expired];
+  
+  [person setStreet:street];
+  [person setCity:city];
+  [person setState:state];
+  [person setZip:zip];
+  return person;
 }
 
 + (NSString *)formatNameFromString:(NSString *)string {

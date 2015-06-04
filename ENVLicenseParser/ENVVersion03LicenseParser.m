@@ -33,11 +33,20 @@
   NSDate *expirationDate = [NSDate env_dateFromString:expirationDateSting
                                            withFormat:@"MMddyyyy"];
   BOOL expired = [expirationDate env_isInPast];
-
-  return [[ENVPerson alloc] initWithName:fullName
-                               licenseID:licenseID
-                                 address:address
-                                 expired:expired];
+  
+  ENVPerson *person = [[ENVPerson alloc] initWithName:fullName
+                                            licenseID:licenseID
+                                              address:address
+                                              expired:expired];
+  
+  [person setFirstName:givenNames];
+  [person setMiddleName:@""];
+  [person setLastName:lastName];
+  [person setCity:city];
+  [person setState:state];
+  [person setZip:zip];
+  
+  return person;
 }
 
 + (NSString *)givenNamesFromString:(NSString *)string {
