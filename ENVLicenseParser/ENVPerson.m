@@ -13,6 +13,13 @@
   _licenseID = licenseID;
   _address = address;
   _expired = expired;
+  _firstName = @"";
+  _middleName = @"";
+  _lastName = @"";
+  _street = @"";
+  _city = @"";
+  _state = @"";
+  _zip = @"";
   
   return self;
 }
