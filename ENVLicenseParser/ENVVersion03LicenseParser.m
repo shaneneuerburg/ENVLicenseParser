@@ -7,6 +7,7 @@
 @implementation ENVVersion03LicenseParser
 
 + (ENVPerson *)personFromString:(NSString *)string {
+  string = [string substringFromIndex:31+2];
   NSArray *components = [string componentsSeparatedByCharactersInSet:
                          [NSCharacterSet newlineCharacterSet]];
   NSDictionary *dictionary = [components env_licenseDictionary];
