@@ -43,6 +43,7 @@
   [person setFirstName:givenNames];
   [person setMiddleName:@""];
   [person setLastName:lastName];
+  [person setStreet:street];
   [person setCity:city];
   [person setState:state];
   [person setZip:zip];
